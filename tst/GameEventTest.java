@@ -14,10 +14,10 @@ public class GameEventTest {
         testEvent = new GameEvent("Event1", () -> {
             return "Return1";
         });
-        testEventNullName = new GameEvent( null, () -> {
+        testEventNullName = new GameEvent(() -> {
           return "Return2";
         });
-        testEventNullAction = new GameEvent("Event3", null);
+        testEventNullAction = new GameEvent("Event3");
         testEventNullReturn = new GameEvent("Event4", () -> {
             return null;
         });
@@ -51,8 +51,8 @@ public class GameEventTest {
     }
 
     @Test
-    public void nullNamingTest() {
-        assertNull(testEventNullName.getName());
+    public void emptyNamingTest() {
+        assertEquals(testEventNullName.getName(), "");
     }
 
     @Test

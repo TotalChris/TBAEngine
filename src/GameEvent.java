@@ -1,6 +1,6 @@
 public class GameEvent {
     private Action a;
-    public String name;
+    private String name;
     GameEvent(){
         this("", null);
     }
@@ -15,7 +15,11 @@ public class GameEvent {
         this.a = a;
     }
     public String doAction(){
-        return a.reaction();
+        if(a != null){
+            return a.reaction();
+        } else {
+            return null;
+        }
     }
     public void setAction(Action a){
         this.a = a;

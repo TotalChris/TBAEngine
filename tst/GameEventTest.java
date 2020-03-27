@@ -4,14 +4,14 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class GameEventTest {
-    private GameEvent testEvent;
+    private GameEvent testEventDefault;
     private GameEvent testEventNullName;
     private GameEvent testEventNullReturn;
     private GameEvent testEventNullAction;
 
     @Before
     public void init() throws Exception {
-        testEvent = new GameEvent("Event1", () -> {
+        testEventDefault = new GameEvent("Event1", () -> {
             return "Return1";
         });
         testEventNullName = new GameEvent(() -> {
@@ -25,15 +25,15 @@ public class GameEventTest {
 
     @Test
     public void doActionTest() {
-        assertEquals("Return1", testEvent.doAction());
+        assertEquals("Return1", testEventDefault.doAction());
     }
 
     @Test
     public void setActionTest() {
-        testEvent.setAction(() -> {
+        testEventDefault.setAction(() -> {
             return "ReturnModified";
         });
-        assertEquals("ReturnModified", testEvent.doAction());
+        assertEquals("ReturnModified", testEventDefault.doAction());
     }
 
     /*
@@ -42,7 +42,7 @@ public class GameEventTest {
      */
     @Test
     public void getActionTest() {
-        GameEvent.Action a = testEvent.getAction();
+        GameEvent.Action a = testEventDefault.getAction();
         assertNotNull(a);
         assertNotNull(a.action());
     }
@@ -50,9 +50,9 @@ public class GameEventTest {
 
     @Test
     public void namingTest() {
-        assertEquals(testEvent.getName(), "Event1");
-        testEvent.setName("EventModified");
-        assertEquals(testEvent.getName(), "EventModified");
+        assertEquals(testEventDefault.getName(), "Event1");
+        testEventDefault.setName("EventModified");
+        assertEquals(testEventDefault.getName(), "EventModified");
     }
 
     @Test

@@ -36,12 +36,17 @@ public class GameEventTest {
         assertEquals("ReturnModified", testEvent.doAction());
     }
 
+    /*
+    Test the normal functionality of retrieving an action.
+    Here, we get the action from from the standard testEvent, and assert that both itself and its reaction property are not null.
+     */
     @Test
     public void getActionTest() {
-        Action a = testEvent.getAction();
+        GameEvent.Action a = testEvent.getAction();
         assertNotNull(a);
-        assertNotNull(a.reaction());
+        assertNotNull(a.action());
     }
+
 
     @Test
     public void namingTest() {

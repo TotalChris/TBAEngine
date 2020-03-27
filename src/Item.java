@@ -3,6 +3,7 @@
  */
 public class Item{
     private String name;
+    private String description;
 
     /**
      * Instantiates a new item. The item name is set to an empty value.
@@ -37,5 +38,23 @@ public class Item{
      */
     public String getName(){
         return this.name;
+    }
+
+    /**
+     * Set the description for this item.
+     *
+     * @param desc the name to set for this item
+     */
+    public void setDescription(String desc){
+        this.description = desc;
+    }
+
+    /**
+     * Get the description of this item.
+     *
+     * @return the description of this item
+     */
+    public String getDescription(){
+        return this.description;
     }
 }

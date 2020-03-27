@@ -9,6 +9,10 @@ public class GameEvent {
     private Action a;
     private String name;
 
+    public interface Action {
+        public String action();
+    }
+
     /**
      * Instantiates a new GameEvent. The name is blank, and the action is null. Calling doAction() will return a null value.
      */
@@ -52,7 +56,7 @@ public class GameEvent {
      */
     public String doAction(){
         if(a != null){
-            return a.reaction();
+            return a.action();
         } else {
             return null;
         }

@@ -66,8 +66,11 @@ public class LocationTest {
     public void getAllItem() {
     }
 
-    @Test
-    public void getItemByName() {
+    @Test(expected = Location.ItemNotFoundException.class)
+    public void getItemByName() throws Location.ItemNotFoundException {
+        Item foo = new Item("foo");
+        testLocationDefault.placeItem(foo);
+        testLocationDefault.getItemByName("bar");
     }
 
     @Test

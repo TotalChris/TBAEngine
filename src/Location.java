@@ -193,7 +193,7 @@ public class Location {
             return "There is nothing in the room.";
         }
         for (Item item : itemList) {
-            response += "There is a | " + item.getName() + " | in the room.\n";
+            response += "There is a | " + item.getName() + " | in the " + this.roomTitle + ".\n";
             //if(item instanceof Container){
             //    response += ((Container)item).getAllItemsString(item.getName());
             //}

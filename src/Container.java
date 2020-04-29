@@ -1,6 +1,7 @@
 import java.util.Vector;
+import java.util.Iterator;
 
-public class Container extends Item {
+public class Container extends Item implements Iterable<Item>{
     private Vector<Item> contents;
     private int capacity;
     private int size;
@@ -28,7 +29,7 @@ public class Container extends Item {
         int weight = ( item instanceof Container ? ((Container) item).capacity : 1);
         if(this.size + weight < capacity){
             contents.add(item);
-            this.size =+ weight;
+            this.size += weight;
         } else {
             //container full, fail!
         }
@@ -83,5 +84,23 @@ public class Container extends Item {
         return contents.size() == capacity;
     }
 
+    @Override
+    public Iterator<Item> iterator(){
+        return new ContainerIterator();
+    }
 
+    private class ContainerIterator implements Iterator<Item> {
+
+        private int index = 0;
+
+        public boolean hasNext() {
+            return index < size;
+        }
+
+        @Override
+        public Item next() {
+            index++;
+            return contents.get(index - 1);
+        }
+    }
 }

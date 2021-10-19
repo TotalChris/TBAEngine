@@ -7,7 +7,7 @@ public class DemoGame {
         box.addItem(new Item("Kiwi"));
         System.out.println("The size of the box is " + box.getSize() + " items.");
         for (Item i : box) {
-            System.out.println("There is a |" + i.getName() + "| in the " + box.getName() + ".");
+            System.out.println("There is a" + (Util.isVowelWord(i.getName())?"n":"") + " |" + i.getName() + "| in the " + box.getName() + ".");
 
         }
     }

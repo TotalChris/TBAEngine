@@ -1,0 +1,33 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>10</x><y>10</y><w>200</w><h>170</h></coordinates><panel_attributes>GameEvent
+--
+-name : String
+-description : String
+-action : Action
+--
++getName(): String
++setName(name: String): void
++getDescription(): String
++setDescription(description: String): void
++getAction(): Action
++setAction(a : Action): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>240</x><y>270</y><w>200</w><h>190</h></coordinates><panel_attributes>Item
+--
+-name : String
+-description : String
+-events[] : GameEvent
+--
++getName(): String
++setName(name: String): void
++getDescription(): String
++setDescription(description: String): void
++addEvent(event: GameEvent): void
++getEvent(name: String): GameEvent
++removeEvent(): GameEvent
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLInterface</id><coordinates><x>290</x><y>90</y><w>100</w><h>90</h></coordinates><panel_attributes>Action
+--
++run() : String</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>200</x><y>170</y><w>60</w><h>120</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>40;100;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>10</x><y>540</y><w>90</w><h>30</h></coordinates><panel_attributes>Character</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>10</x><y>290</y><w>200</w><h>170</h></coordinates><panel_attributes>Container
+--
+contents[] : Item
+--
+addItem(i : Item): void
+removeItem(): Item
+getItem(name: String): Item</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>200</x><y>280</y><w>60</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;40;10</additional_attributes></element><element><id>Relation</id><coordinates><x>200</x><y>60</y><w>150</w><h>70</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;130;50</additional_attributes></element><element><id>UMLClass</id><coordinates><x>120</x><y>540</y><w>90</w><h>30</h></coordinates><panel_attributes>Location</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>50</x><y>450</y><w>30</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;90;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>150</x><y>450</y><w>30</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;90;10;10</additional_attributes></element></diagram>
